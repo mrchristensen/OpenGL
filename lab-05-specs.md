@@ -8,7 +8,7 @@ When moving, you should move one unit in the world coordinates ***relative to th
 ---
 
 ## User Interface
-Your only interaction will be thorugh the keyboard. Each of the following keys should perform the corresponding actions.
+Your only interaction will be through the keyboard. Each of the following keys should perform the corresponding actions.
 
 Key | Action
 :---: | :---
@@ -29,4 +29,4 @@ p  | Swtich to perspective projection
 ## Implementation Notes
 You are given two files that you will **not** need to edit (`gl_base.py` and `gl_models.py`) and a file that you will edit and turn in (`lab5.py`).  `gl_base.py` contains a class that you will inherit from called `Renderer`, which handles a lot of the boilerplate code involved with OpenGL.  `gl_models.py` contain the actual 3d geometry needed for this lab and the next including a house, a car, and a tire.  `lab5.py` is the file you will edit.
 
-Already provided in `lab5.py` is a class called `Lab5Renderer` that inherits from `Renderer` and provides methods that you will override including `poll_keys`, `get_projection` and `get_view`.   `poll_keys` handles the keyboard input and an example of how to detect key presses is provided for the `a` key.  `get_projection` is the method where you will implement your projection matrix and should return an orthographic projection matrix if you are in orthographic mode and a perspective matrix if you are in perspective mode.  `get_view` should return the view matrix.  Both `get_projection` and `get_view` should return row ordered numpy arrays representing their respecitve matrices.
+Already provided in `lab5.py` is a class called `Lab5Renderer` that inherits from `Renderer` and provides methods that you will override including `poll_keys`, `get_projection` and `get_view`.   `poll_keys` handles the keyboard input and an example of how to detect key presses is provided for the `a` key.  `get_projection` is the method where you will implement your projection matrix and should return an orthographic projection matrix if you are in orthographic mode and a perspective matrix if you are in perspective mode.  `get_view` should return the view matrix.  Both `get_projection` and `get_view` should return row ordered numpy arrays representing their respective matrices.
