@@ -1,4 +1,5 @@
 import logging
+import moderngl as gl
 import moderngl_window as mglw
 import numpy as np
 from gl_models import House, Car, Tire
@@ -37,6 +38,8 @@ void main() {
         self.key_pressed = {key: False for key in self.wnd.keys.__dict__.values() if isinstance(key, int)}
         self.keys = self.wnd.keys
         self.model_matrix = []
+        # self.ctx.enable(gl.DEPTH_TEST)
+
 
     def render(self, total_time, delta_time):
         self.ctx.clear(*self.background_color, 1.0)
@@ -68,7 +71,7 @@ void main() {
 
     def get_model_matrix(self):
         model_matrix = np.eye(4)
-        for m in self.model_matrix:
+        for m in self.model_matrix[::-1]:
             model_matrix = np.matmul(model_matrix, m)
         return model_matrix
 
