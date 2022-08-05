@@ -10,7 +10,7 @@ class Lab5Renderer(Renderer):
         self.cx = 0
         self.cy = 0
         self.cz = -20
-        self.ry = 0
+        self.theta = 0
         self.perspective = 1
 
     def poll_keys(self):
@@ -29,26 +29,26 @@ class Lab5Renderer(Renderer):
         """
         if self.key_pressed[self.keys.A]:  # Move left
             print("a is pressed")
-            self.cx += -np.cos(self.ry)
-            self.cz += -np.sin(self.ry)
+            self.cx += -np.cos(self.theta)
+            self.cz += -np.sin(self.theta)
         elif self.key_pressed[self.keys.D]:  # Move right
             print("d is pressed")
-            self.cx += np.cos(self.ry)
-            self.cz += np.sin(self.ry)
+            self.cx += np.cos(self.theta)
+            self.cz += np.sin(self.theta)
         elif self.key_pressed[self.keys.S]:  # Move back
             print("s is pressed")
-            self.cz += -np.sin(self.ry + (np.pi/2))
-            self.cx += -np.cos(self.ry + (np.pi/2))
+            self.cz += -np.sin(self.theta + (np.pi / 2))
+            self.cx += -np.cos(self.theta + (np.pi / 2))
         elif self.key_pressed[self.keys.W]:  # Move forward
             print("w is pressed")
-            self.cz += np.sin(self.ry + (np.pi/2))
-            self.cx += np.cos(self.ry + (np.pi/2))
+            self.cz += np.sin(self.theta + (np.pi / 2))
+            self.cx += np.cos(self.theta + (np.pi / 2))
         elif self.key_pressed[self.keys.Q]:  # Turn left
             print("q is pressed")
-            self.ry += 0.1
+            self.theta += 0.1
         elif self.key_pressed[self.keys.E]:  # Turn right
             print("e is pressed")
-            self.ry += -0.1
+            self.theta += -0.1
         elif self.key_pressed[self.keys.R]:  # Move up
             print("r is pressed")
             self.cy += 1
@@ -66,7 +66,7 @@ class Lab5Renderer(Renderer):
             self.cy = 0
             self.cz = -20
 
-            self.ry = 0
+            self.theta = 0
 
             print("h is pressed")
 
@@ -103,9 +103,9 @@ class Lab5Renderer(Renderer):
         ]).T
 
         rotation = np.array([
-            [np.cos(self.ry), 0, np.sin(self.ry), 0],
+            [np.cos(self.theta), 0, np.sin(self.theta), 0],
             [0, 1, 0, 0],
-            [-np.sin(self.ry), 0, np.cos(self.ry), 0],
+            [-np.sin(self.theta), 0, np.cos(self.theta), 0],
             [0, 0, 0, 1]
         ]).T
 

@@ -52,10 +52,10 @@ class Lab6Renderer(Lab5Renderer):
 
     def render_scene(self, delta_time):
         car_matrix = model_transform(self.carx, -4, 0, 0)
-        tire1 = np.matmul(car_matrix, model_transform(-2, 0, 1.5, 0, self.tirez))
-        tire2 = np.matmul(car_matrix, model_transform(2, 0, 1.5, 0, self.tirez))
+        tire1 = np.matmul(car_matrix, model_transform(-2, 0, 1.5, 0 , self.tirez))
+        tire2 = np.matmul(car_matrix, model_transform(2, 0, 1.5, 0  , self.tirez))
         tire3 = np.matmul(car_matrix, model_transform(-2, 0, -1.5, 0, self.tirez))
-        tire4 = np.matmul(car_matrix, model_transform(2, 0, -1.5, 0, self.tirez))
+        tire4 = np.matmul(car_matrix, model_transform(2, 0, -1.5, 0 , self.tirez))
 
         self.car.render(car_matrix.T, color=np.array([0, 0, 255]))
         self.tire.render(tire1.T, color=np.array([0, 255, 0]))
@@ -70,23 +70,23 @@ class Lab6Renderer(Lab5Renderer):
 
         # First row
         self.house.render(model_transform(0, 0, 15, 180).T, color=np.array([255, 0, 0]))
-        self.house.render(model_transform(0, 0, -15, 0).T, color=np.array([255, 0, 0]))
+        self.house.render(model_transform(0, 0, -15, 0 ).T, color=np.array([255, 0, 0]))
 
         # Second row
         self.house.render(model_transform(15, 0, 15, 180).T, color=np.array([255, 0, 0]))
-        self.house.render(model_transform(15, 0, -15, 0).T, color=np.array([255, 0, 0]))
+        self.house.render(model_transform(15, 0, -15, 0 ).T, color=np.array([255, 0, 0]))
 
         # Third row
         self.house.render(model_transform(30, 0, 15, 180).T, color=np.array([255, 0, 0]))
-        self.house.render(model_transform(30, 0, -15, 0).T, color=np.array([255, 0, 0]))
+        self.house.render(model_transform(30, 0, -15, 0 ).T, color=np.array([255, 0, 0]))
 
         # Fourth row
         self.house.render(model_transform(45, 0, 15, 180).T, color=np.array([255, 0, 0]))
-        self.house.render(model_transform(45, 0, -15, 0).T, color=np.array([255, 0, 0]))
+        self.house.render(model_transform(45, 0, -15, 0 ).T, color=np.array([255, 0, 0]))
 
         # Fifth row
         self.house.render(model_transform(60, 0, 15, 180).T, color=np.array([255, 0, 0]))
-        self.house.render(model_transform(60, 0, -15, 0).T, color=np.array([255, 0, 0]))
+        self.house.render(model_transform(60, 0, -15, 0 ).T, color=np.array([255, 0, 0]))
 
         # Animate the thing
         self.carx += 0.1
